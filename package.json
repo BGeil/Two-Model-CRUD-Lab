@@ -2,7 +2,7 @@
   "name": "two-model-crud",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/BGeil/Two-Model-CRUD-Lab#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.6"
   }
 }
