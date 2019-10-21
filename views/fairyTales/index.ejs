@@ -5,6 +5,14 @@
 </head>
 <body>
 	<h1>This is the list of Fairy Tales</h1>
+	<ul>
+	<% for (let i = 0; i < fairyTales.length; i++) { -%>
+		<li>
+		<a href="/fairyTales/<%=fairyTales[i]._id%>"><%=fairyTales[i].name%></a>
+		</li>
+	<% } -%>
+	</ul>
+
 	<a href="./fairyTales/new">New Fairy Tale</a>
 </body>
 </html>

@@ -6,7 +6,17 @@ const Fairytale = require(`../models/fairyTales.js`)
 
 // fairy tale's index route
 router.get(`/`, (req, res) => {
-	res.render(`fairyTales/index.ejs`)
+	Fairytale.find({}, (err, foundFairyTales) => {
+		if (err) {
+			res.send(err)
+		}
+		else {
+			res.render(`fairyTales/index.ejs`, {
+				fairyTales: foundFairyTales
+			})
+		}
+	})
+	
 })
 
 // new route
