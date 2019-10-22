@@ -23,6 +23,7 @@ router.get(`/`, (req, res) => {
 router.get(`/new`, (req, res) => {
 	res.render(`fairyTales/new.ejs`)
 })
+
 // create route
 router.post(`/`, (req, res) => {
 	console.log(req.body);
@@ -36,5 +37,23 @@ router.post(`/`, (req, res) => {
 	})
 })
 
+// show route
+router.get('/:id', (req, res) => {
+	Fairytale.findById(req.params.id).populate({path: 'characters'}).exec( (err, foundFT) => {
+	    if (err) {
+	    	console.log(err)
+	    } else {
+	    	console.log(foundFT)
+	    	res.render('fairyTales/show.ejs', {ft: foundFT})
+	    }
+	})
 
+/*	Fairytale.findById(req.params.id, (err, foundFairyTale) => {
+	    if (err) {
+	    	console.log(err)
+	    } else {
+	    	res.render('./fairyTales/show.ejs', {ft: foundFairyTale})
+	    }
+	})*/
+})
 module.exports = router;

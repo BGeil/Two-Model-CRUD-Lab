@@ -20,7 +20,8 @@ app.get(`/`, (req, res) => {
 // controllers
 	const fairyTaleController = require(`./controllers/fairyTales.js`)
 	app.use(`/fairyTales`,fairyTaleController)
-
+	const characterController = require('./controllers/characters.js')
+	app.use('/characters', characterController)
 
 
 app.listen(3000, () => {

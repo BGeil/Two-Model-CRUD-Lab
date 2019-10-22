@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Characters Page</title>
+</head>
+<body>
+	<h1>This is the list of Characters</h1>
+	<ul>
+	<% for (let i = 0; i < characters.length; i++) { -%>
+		<li>
+		<a href="/characters/<%=characters[i]._id%>"><%=characters[i].name%></a>
+		</li>
+	<% } -%>
+	</ul>
+
+	<a href="./characters/new">New Characters</a>
+</body>
+</html>
